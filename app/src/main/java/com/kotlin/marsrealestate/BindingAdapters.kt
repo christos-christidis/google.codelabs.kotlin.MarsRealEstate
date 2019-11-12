@@ -11,8 +11,6 @@ import com.kotlin.marsrealestate.network.MarsProperty
 import com.kotlin.marsrealestate.overview.MarsApiStatus
 import com.kotlin.marsrealestate.overview.PhotoGridAdapter
 
-// SOS: note how all binding adapters have nullable data. eg at the start of program, both listData
-// and status ARE null (checked w log stmts)
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
     imgUrl?.let {
@@ -26,8 +24,6 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     }
 }
 
-// SOS: in the layout, app:listData binds to the LiveData<List<MarsProperty>> of the view model. Note
-// that the type we declare here is NOT LiveData but the type of data it contains.
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsProperty>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
