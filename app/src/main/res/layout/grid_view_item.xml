@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="property"
+            type="com.kotlin.marsrealestate.network.MarsProperty" />
+    </data>
 
     <ImageView
         android:id="@+id/mars_image"
@@ -9,6 +17,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/real_estate_photo"
         android:padding="2dp"
+        app:imageUrl="@{property.imgSrcUrl}"
         android:scaleType="centerCrop"
         tools:src="@tools:sample/backgrounds/scenic" />
 </layout>

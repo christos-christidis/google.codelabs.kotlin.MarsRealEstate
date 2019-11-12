@@ -15,11 +15,12 @@ class OverviewFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // SOS: a simpler way to get the binding!
         val binding = FragmentOverviewBinding.inflate(inflater)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
+        binding.photosGrid.adapter = PhotoGridAdapter()
 
         setHasOptionsMenu(true)
         return binding.root
